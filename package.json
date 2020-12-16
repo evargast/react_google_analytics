@@ -17,7 +17,7 @@
         "deploy-storybook": "storybook-to-ghpages --ci --out=storybook",
         "generate": "plop component",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d build",
+        "deploy": "gh-pages -d dist",
         "g": "plop component"
     },
     "repository": {
