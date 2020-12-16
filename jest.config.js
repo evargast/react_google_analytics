@@ -15,6 +15,7 @@ const config = {
     moduleNameMapper: {
         "\\.css$": "identity-obj-proxy",
         "^components(.*)$": "<rootDir>/src/components$1",
+        "^utils(.*)$": "<rootDir>/src/utils$1",
         // Add aliases here ---> "^alias(.*)$": "<rootDir>/src/alias-path$1", <---
     },
 };

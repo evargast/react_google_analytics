@@ -6,6 +6,7 @@ import {
     View,
 } from "@adobe/react-spectrum";
 import React, { ComponentProps, FC } from "react";
+import { analytics } from "utils";
 
 import "./App.css";
 
@@ -24,6 +25,8 @@ const App: FC = () => {
         "green",
         "blue",
     ];
+
+    analytics.pageview(window.location.pathname + window.location.search);
 
     type BackgroundColor = ComponentProps<typeof View>["backgroundColor"];
     const colors: BackgroundColor[] = [];
