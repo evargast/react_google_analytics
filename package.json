@@ -16,6 +16,8 @@
         "build-storybook": "build-storybook --output-dir storybook",
         "deploy-storybook": "storybook-to-ghpages --ci --out=storybook",
         "generate": "plop component",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
         "g": "plop component"
     },
     "repository": {
@@ -65,7 +67,6 @@
         "eslint-plugin-react": "^7.21.5",
         "eslint-plugin-react-hooks": "^4.2.0",
         "eslint-plugin-simple-import-sort": "^7.0.0",
-        "gh-pages": "^3.1.0",
         "html-webpack-plugin": "^4.5.0",
         "husky": "^4.3.6",
         "identity-obj-proxy": "^3.0.0",
