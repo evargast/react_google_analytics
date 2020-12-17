@@ -1,3 +1,3 @@
-import { analytics } from "./analytics";
+import { analytics, getPageURL } from "./analytics";
 
-export { analytics };
+export { analytics, getPageURL };

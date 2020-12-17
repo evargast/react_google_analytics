@@ -1,60 +1,41 @@
 import {
-    Grid,
     lightTheme,
+    ProgressCircle,
     Provider as ProviderV3,
-    repeat,
-    View,
 } from "@adobe/react-spectrum";
-import React, { ComponentProps, FC } from "react";
+import HelloExample from "components/HelloExample";
+import React, { FC, Suspense } from "react";
+import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import { analytics } from "utils";
 
 import "./App.css";
 
 const App: FC = () => {
-    const baseColors = [
-        "celery",
-        "chartreuse",
-        "yellow",
-        "magenta",
-        "fuchsia",
-        "purple",
-        "indigo",
-        "seafoam",
-        "red",
-        "orange",
-        "green",
-        "blue",
-    ];
-
-    analytics.pageview(window.location.pathname + window.location.search);
-
-    type BackgroundColor = ComponentProps<typeof View>["backgroundColor"];
-    const colors: BackgroundColor[] = [];
-    for (const color of baseColors) {
-        for (let i = 4; i <= 7; i++) {
-            colors.push(`${color}-${i}00` as BackgroundColor);
-        }
-    }
+    analytics.pageview();
 
     return (
-        <ProviderV3 theme={lightTheme} colorScheme={"light"}>
-            <View paddingTop="size-400">
-                <h1 className="App">Welcome to React Spectrum!</h1>
-            </View>
+        <ProviderV3 theme={lightTheme} colorScheme={"dark"} height="100vh">
+            <HashRouter>
+                <Suspense
+                    fallback={
+                        <ProgressCircle aria-label="Loading…" isIndeterminate />
+                    }
+                >
+                    <Switch>
+                        <Route exact path="/">
+                            <Redirect to="/hello" />
+                        </Route>
 
-            <Grid
-                columns={repeat("auto-fit", "size-800")}
-                autoRows="size-800"
-                justifyContent="center"
-                gap="size-100"
-                marginX="size-200"
-                marginTop="size-300"
-                marginBottom="size-400"
-            >
-                {colors.map(color => (
-                    <View key={color} backgroundColor={color} />
-                ))}
-            </Grid>
+                        <Route path="/hello">
+                            <HelloExample />
+                        </Route>
+
+                        <Route path="*">
+                            <Redirect to="/hello" />
+                        </Route>
+                    </Switch>
+                </Suspense>
+            </HashRouter>
         </ProviderV3>
     );
 };
