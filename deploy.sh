@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# DONT FORGET TO >>>>>>>>>> chmod +x ./deploy.sh <<<<<<<<<<<<<
+
 # abort on errors
 set -e
 
@@ -14,6 +16,6 @@ echo 'https://evargast.github.io/' > CNAME
 git init
 git add -A
 git commit -m 'deploy'
-git push -f git@github.com:react-ga/react-ga.git master:gh-pages
+git push -f git@github.com:evargast/react_google_analytics.git master:gh-pages
 
 cd -

@@ -87,3 +87,11 @@ This repo supports `.story.mdx` and `.story.tsx` stories!
 ## Questions ❓
 
 Feel free to file an issue or send me an email
+
+## Demo pic
+
+Using the [Google Analytics Debugger](https://chrome.google.com/webstore/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna) you can inspect the beacons that are fired, see "page" for the URL with the hash route
+
+![analytics debugger example][analytics]
+
+[analytics]: https://raw.githubusercontent.com/evargast/react_google_analytics/master/readme-assets/analytics.png
