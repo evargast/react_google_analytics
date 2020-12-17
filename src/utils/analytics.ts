@@ -4,7 +4,7 @@ const trackingId = "UA-97488593-2"; // Replace with your Google Analytics tracki
 
 ReactGA.initialize(trackingId);
 
-const getPageURL = () => {
+const getPageURL = (): string => {
     return window.location.href;
 };
 
